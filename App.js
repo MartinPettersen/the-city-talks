@@ -38,9 +38,12 @@ export default function App() {
 
     setDoc(myDoc, docData)
       .then(() => {
+        console.log("Document Created")
         alert("Document Created");
       })
       .catch((error) => {
+        console.log("error")
+
         alert(error.Message);
       });
   };
@@ -53,10 +56,14 @@ export default function App() {
           setCityConversation(snapshot.data());
         } else {
           alert("Could not find any comments");
+          console.log("Could not find document")
+
         }
       })
       .catch((error) => {
         alert(error.Message);
+        console.log("error2")
+
       });
   };
   const addComment = (value, merge) => {
@@ -69,6 +76,8 @@ export default function App() {
       })
       .catch((error) => {
         alert(error.Message);
+        console.log("error3")
+
       });
   };
 
@@ -167,7 +176,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#3584E4",
+    backgroundColor: "#202124",
     alignItems: "center",
     justifyContent: "center",
   },
